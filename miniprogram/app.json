@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/invate/invate",
+    "pages/site/site"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "唐松💗羊静",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/invate/invate",
+        "text": "相册"
+      },
+      {
+        "pagePath": "pages/site/site",
+        "text": "地点"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

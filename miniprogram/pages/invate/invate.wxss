@@ -1,0 +1,20 @@
+/* miniprogram/pages/invate/invate.wxss */
+/**app.wxss**/
+.text {
+  align-self: center;
+  color: red;
+  height: 24pt;
+} 
+
+.swiper {
+  width: 95%;
+  height: 700rpx;
+  border: 32pt;
+  align-self: center;
+  padding-top: 32pt;
+  padding-bottom: 32pt;
+}
+
+.image {
+  align-self: center;
+}

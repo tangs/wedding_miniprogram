@@ -1,0 +1,12 @@
+/* miniprogram/pages/site/site.wxss */
+.map {
+  height: 600rpx;
+  width: 95%;
+  align-self: center;
+}
+
+.text {
+  align-self: center;
+  color: red;
+  height: 24pt;
+} 
