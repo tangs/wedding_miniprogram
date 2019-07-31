@@ -11,8 +11,10 @@
 <swiper class="swiper" autoplay="True" interval="4000"
 indicator-color="white" indicator-dots="True"  circular="true">
   <block wx:for="{{imgs}}" wx:key="url">
-        <swiper-item>
-            <image src="{{item.url}}" class="image" mode="aspectFill"></image>
-      </swiper-item>
+    <swiper-item>
+      <view class="contaner">
+        <image src="{{item.url}}" class="image" mode="widthFix"></image>
+      </view>
+    </swiper-item>
   </block>
 </swiper>

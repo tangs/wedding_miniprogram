@@ -8,3 +8,4 @@ latitude="{{latitude}}" longitude="{{longitude}}"></map>
 <text class=".text">
   地址:四川省成都市双流区高新区中和街道迎江路198号
 </text>
+<image bindtap="markertap" class="image" src="{{navIcon}}" ></image>

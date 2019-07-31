@@ -10,7 +10,16 @@ Page({
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1621-.jpg' },
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1586.jpg' },
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1521.jpg' },
-      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1430.jpg' }
+      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1430.jpg' },
+      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1621-.jpg' },
+      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1810-.jpg' },
+      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1810.jpg' },
+      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1811.jpg' },
+      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1815.jpg' },
+      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1823.jpg' },
+      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1825.jpg' },
+      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1827.jpg' },
+      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1834.jpg' }
     ]
   },
 

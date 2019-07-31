@@ -10,3 +10,10 @@
   color: red;
   height: 24pt;
 } 
+
+.image {
+  padding-top: 32px;
+  width: 64px;
+  height: 64px;
+  align-self: center;
+}
