@@ -46,6 +46,18 @@ App({
     }
   },
 
+  openBackMusic: function () {
+    const player = wx.getBackgroundAudioManager()
+    player.play()
+    this.isPalying = true
+  },
+
+  closeBackMusic: function () {
+    const player = wx.getBackgroundAudioManager()
+    player.pause()
+    this.isPalying = false
+  },
+
   isBackMusicPlaying: function () {
     return this.isPalying
   }

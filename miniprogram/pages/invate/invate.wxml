@@ -19,6 +19,11 @@ indicator-color="white" indicator-dots="True"  circular="true">
   </block>
 </swiper>
 
-<button class="kf_button" bindtap="switchBackMusic" animation="{{animationData}}">
+<button class="kf_button" bindtap="closeBackMusic" 
+hidden="{{!isPlaying}}" animation="{{animationData}}">
+    <image class="kf_image" src="../../images/music.png" mode=""></image>
+</button>
+
+<button class="kf_button" bindtap="openBackMusic" hidden="{{isPlaying}}">
     <image class="kf_image" src="../../images/music.png" mode=""></image>
 </button>

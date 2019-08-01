@@ -11,7 +11,6 @@ Page({
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1586.jpg' },
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1521.jpg' },
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1430.jpg' },
-      { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1621-.jpg' },
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1810-.jpg' },
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1810.jpg' },
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1811.jpg' },
@@ -21,17 +20,17 @@ Page({
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1827.jpg' },
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1834.jpg' }
     ],
-    animationData: {}
+    animationData: {},
+    isPlaying: getApp().isBackMusicPlaying()
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const player = wx.getBackgroundAudioManager()
-    player.onPlay(() => this.updateMusicSwitch(true))
-    player.onPause(() => this.updateMusicSwitch(false))
-    player.onStop(() => this.updateMusicSwitch(false))
+    this.anim = wx.createAnimation({
+      duartion: 1000 * 10000
+    })
   },
 
   /**
@@ -45,7 +44,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.updateMusicSwitch(true)
+    this.updateAnims()
   },
 
   /**
@@ -83,27 +82,32 @@ Page({
 
   },
 
-  updateMusicSwitch: function (isPlaying) {
-    const anim = wx.createAnimation({
-      duartion: 1000 * 1000
+  updateAnims: function () {
+    const anim = this.anim
+    anim.rotate(360 * 10000).step({
+      duration: 1000 * 10000
     })
-    if (isPlaying) {
-      anim.rotate(360 * 1000).step({
-        duration: 1000 * 1000
-      })
-      this.setData({
-        animationData: anim.export()
-      })
-    } else {
-      anim.step({})
-      this.setData({
-        animationData: anim.export()
-      })
-    }
+    this.setData({
+      animationData: anim.export()
+    })
   },
 
   switchBackMusic: function () {
     const ret = getApp().switchBackMusic()
     this.updateMusicSwitch(ret)
+  },
+
+  closeBackMusic: function () {
+    this.setData({
+      isPlaying: false
+    })
+    getApp().closeBackMusic()
+  },
+
+  openBackMusic: function () {
+    this.setData({
+      isPlaying: true
+    })
+    getApp().openBackMusic()
   }
 })
