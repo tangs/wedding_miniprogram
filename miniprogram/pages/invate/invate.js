@@ -20,14 +20,18 @@ Page({
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1825.jpg' },
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1827.jpg' },
       { url: 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/H_H_1834.jpg' }
-    ]
+    ],
+    animationData: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    const player = wx.getBackgroundAudioManager()
+    player.onPlay(() => this.updateMusicSwitch(true))
+    player.onPause(() => this.updateMusicSwitch(false))
+    player.onStop(() => this.updateMusicSwitch(false))
   },
 
   /**
@@ -41,7 +45,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.updateMusicSwitch(true)
   },
 
   /**
@@ -77,5 +81,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  updateMusicSwitch: function (isPlaying) {
+    const anim = wx.createAnimation({
+      duartion: 1000 * 1000
+    })
+    if (isPlaying) {
+      anim.rotate(360 * 1000).step({
+        duration: 1000 * 1000
+      })
+      this.setData({
+        animationData: anim.export()
+      })
+    } else {
+      anim.step({})
+      this.setData({
+        animationData: anim.export()
+      })
+    }
+  },
+
+  switchBackMusic: function () {
+    const ret = getApp().switchBackMusic()
+    this.updateMusicSwitch(ret)
   }
 })

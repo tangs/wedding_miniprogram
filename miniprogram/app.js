@@ -13,20 +13,40 @@ App({
         traceUser: true,
       })
     }
-
+    this.playBackMuisc()
     this.globalData = {}
-    this.backmusic()
   },
 
   backmusic: function () {
-    player();
-    function player() {
-      const back = wx.getBackgroundAudioManager()
-      back.title = '往后余生'
-      back.src = 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/back.mp3'
-      back.onEnded(() => {
-        player()
-      })
+    const player = wx.getBackgroundAudioManager()
+    player.title = '往后余生'
+    player.src = 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/back.mp3'
+    player.onEnded(() => this.backmusic())
+    // player.onPlay(() => this.isPalying = true)
+    // player.onPause(() => this.isPalying = false)
+    // player.onStop(() => this.isPalying = false)
+    // this.isPalying = true
+  },
+
+  playBackMuisc: function () {
+    this.isPalying = true;
+    this.backmusic()
+  },
+
+  switchBackMusic: function () {
+    const player = wx.getBackgroundAudioManager()
+    if (this.isPalying) {
+      player.pause()
+      this.isPalying = false
+      return false
+    } else {
+      player.play()
+      this.isPalying = true
+      return true
     }
+  },
+
+  isBackMusicPlaying: function () {
+    return this.isPalying
   }
 })
