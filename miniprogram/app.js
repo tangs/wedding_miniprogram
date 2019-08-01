@@ -1,7 +1,6 @@
 //app.js
 App({
   onLaunch: function () {
-    
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -16,5 +15,18 @@ App({
     }
 
     this.globalData = {}
+    this.backmusic()
+  },
+
+  backmusic: function () {
+    player();
+    function player() {
+      const back = wx.getBackgroundAudioManager()
+      back.title = '往后余生'
+      back.src = 'cloud://ts-yj-wedding-tluor.7473-ts-yj-wedding-tluor/back.mp3'
+      back.onEnded(() => {
+        player()
+      })
+    }
   }
 })

@@ -1,11 +1,11 @@
 <!--miniprogram/pages/site/site.wxml-->
-<map class="map" bindmarkertap="markertap" scale="17" markers="{{markers}}"
+<map class="map" bindmarkertap="markertap" scale="15" markers="{{markers}}"
 latitude="{{latitude}}" longitude="{{longitude}}"></map>
 
 <text class=".text">
   酒店:十八步岛酒店
 </text>
 <text class=".text">
-  地址:四川省成都市双流区高新区中和街道迎江路198号
+  地址:四川省成都市高新区中和街道迎江路198号
 </text>
 <image bindtap="markertap" class="image" src="{{navIcon}}" ></image>
