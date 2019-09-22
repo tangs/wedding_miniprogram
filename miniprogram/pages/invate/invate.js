@@ -1,4 +1,6 @@
 // miniprogram/pages/invate/invate.js
+const db = wx.cloud.database()
+
 Page({
 
   /**
@@ -45,6 +47,34 @@ Page({
    */
   onShow: function () {
     this.updateAnims()
+    db.collection('books').where({
+      author: 'J. D. Salinger'
+    }).get({
+      success: function(res) {
+        console.log(res)
+      }
+    })
+  },
+
+  onGotUserInfo: function() {
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {
+        a: 1,
+        b: 2,
+      },
+      success: function (res1) {
+        console.dir(res1)
+        wx.getUserInfo({
+          success: function (res) {
+            console.dir(res)
+          },
+          fail: console.error
+        })
+      },
+      fail: console.error
+    })
+    
   },
 
   /**

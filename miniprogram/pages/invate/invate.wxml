@@ -8,6 +8,8 @@
 <text class=".text">
   地点:高新区十八步岛酒店
 </text>
+<button open-type="getUserInfo" lang="zh_CN"
+  bindgetuserinfo="onGotUserInfo">获取用户信息</button>
 <swiper class="swiper" autoplay="True" interval="4000"
 indicator-color="white" indicator-dots="True"  circular="true">
   <block wx:for="{{imgs}}" wx:key="url">
@@ -20,7 +22,7 @@ indicator-color="white" indicator-dots="True"  circular="true">
 </swiper>
 
 <button class="kf_button" bindtap="closeBackMusic" 
-hidden="{{!isPlaying}}" animation="{{animationData}}">
+  hidden="{{!isPlaying}}" animation="{{animationData}}">
     <image class="kf_image" src="../../images/music.png" mode=""></image>
 </button>
 
